@@ -6,9 +6,9 @@ import headerImg from "../assets/img/header-img.svg";
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toChange = [ "Web Developer", "App Developer", "Robotics Developer", "Full Stack Developer"];
-    const [text, setText] = useState("");
-    const [delta, setDelta] = useState(10 + Math.random() * 50);
+    const toChange = ["A Web Developer", "An App Developer", "A Robotics Developer", "A Full Stack Developer"];
+    const [text, setText] = useState("A");
+    const [delta, setDelta] = useState(100 + Math.random()*50);
     const period = 2000;
 
     useEffect(() => {
@@ -29,13 +29,13 @@ export const Banner = () => {
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
             setDelta(period);
-        } else if (isDeleting && updatedText === "") {
+        } else if (isDeleting && updatedText === "A") {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setDelta(100);
+            setDelta(100 + Math.random()*50);
         } else if (isDeleting && updatedText === fullText.substring(0, fullText.length-1)) {
             setDelta(500);
-        } else if (isDeleting) {
+        } else if (isDeleting && updatedText === fullText.substring(0, fullText.length-2)) {
             setDelta(50);
         }
     }
@@ -53,7 +53,7 @@ export const Banner = () => {
                         <button onClick={() => console.log("connect")}>Let's Connect <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header Image" />
+                        <img className="headerimg" src={headerImg} alt="Header Image"/>
                     </Col>
                 </Row>
             </Container>
