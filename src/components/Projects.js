@@ -44,7 +44,7 @@ export const Projects = () => {
                         <h2>Projects</h2>
                         <p>The tangible realities</p>
                         <Tab.Container id="projects" defaultActiveKey={projects[0].type}>
-                            <Nav variant="pills" className="mb-5 justify-content-center aligh-items-center ">
+                            <Nav variant="pills" className="mb-5 justify-content-center aligh-items-center" id="pills">
                                 {
                                     projects.map((project, index) => {
                                         if (!(eventKeys.includes(project.type))) {

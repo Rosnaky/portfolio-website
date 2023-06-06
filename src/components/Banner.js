@@ -40,6 +40,15 @@ export const Banner = () => {
         }
     }
 
+    const el = document.getElementById("home");
+
+    if (el) {
+        el.addEventListener("mousemove", (e) => {
+            el.style.backgroundPositionX = -e.offsetX/100 + "px";
+            el.style.backgroundPositionY = -e.offsetY/100 + "px";
+        });
+    }
+
     return (
         <section className="banner" id="home">
             <Container>

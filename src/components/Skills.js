@@ -49,7 +49,7 @@ export const Skills = () => {
                                 </div>
                                 <div className="item">
                                     <img src={meter3} alt="skill"/>
-                                    <h5>IOS and Android App</h5>
+                                    <h5>IOS and Android Apps</h5>
                                 </div>
                             </Carousel> 
                         </div>
