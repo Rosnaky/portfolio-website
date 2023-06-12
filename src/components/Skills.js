@@ -5,6 +5,7 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import TrackVisibility from "react-on-screen";
 
 export const Skills = () => {
     const responsive = {
@@ -31,28 +32,34 @@ export const Skills = () => {
             <Container>
                 <Row>
                     <Col>
-                        <div className="skill-box">
-                            <h5>
-                                Skills
-                            </h5>
-                            <p>
-                            The catalysts for manifesting digital dreams into tangible realities
-                            </p>
-                            <Carousel className="skillsSlider" responsive={responsive} infinite={true}>
-                                <div className="item">
-                                    <img src={meter1} alt="skill"/>
-                                    <h5>Web Development</h5>
+                        <TrackVisibility>
+                            {({isVisible}) => 
+                                <div className={isVisible ? "animate__animated animate__bounceInUp": ""}>
+                                    <div className="skill-box">
+                                        <h5>
+                                            Skills
+                                        </h5>
+                                        <p>
+                                        The catalysts for manifesting digital dreams into tangible realities
+                                        </p>
+                                        <Carousel className="skillsSlider" responsive={responsive} infinite={true}>
+                                            <div className="item">
+                                                <img src={meter1} alt="skill"/>
+                                                <h5>Web Development</h5>
+                                            </div>
+                                            <div className="item">
+                                                <img src={meter2} alt="skill"/>
+                                                <h5>Robotics Development</h5>
+                                            </div>
+                                            <div className="item">
+                                                <img src={meter3} alt="skill"/>
+                                                <h5>IOS and Android Apps</h5>
+                                            </div>
+                                        </Carousel> 
+                                    </div>
                                 </div>
-                                <div className="item">
-                                    <img src={meter2} alt="skill"/>
-                                    <h5>Robotics Development</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter3} alt="skill"/>
-                                    <h5>IOS and Android Apps</h5>
-                                </div>
-                            </Carousel> 
-                        </div>
+                            }
+                        </TrackVisibility>
                     </Col>
                 </Row>
             </Container>

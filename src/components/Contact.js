@@ -37,6 +37,7 @@ export const Contact = () => {
         setFormDetails(formInitialDetails);
         if (result.code === 200) {
             setStatus({sucesss: true, message: result.status});
+            
         }
         else {
             setStatus({success: false, message: "Something went wrong :("});
@@ -90,11 +91,11 @@ export const Contact = () => {
                                         placeholder="Message" 
                                         onChange={(e) => onFormUpdate("message", e.target.value)}/>
                                     <button type="submit"><span>{buttonText}</span></button>
-                                    {
+                                    {status.message && (
                                     <Col>
                                         <p className={status.success === false ? "danger": "success"}>{status.message}</p>
                                     </Col>
-                                    }
+                                    )}
                                 </Col>
                                 
                             </Row>
