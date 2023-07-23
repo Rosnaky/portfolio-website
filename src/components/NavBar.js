@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap"
 import logo from "../assets/img/logo.svg"
 import navIcon1 from "../assets/img/nav-icon1.svg"
-import Logo4 from "../assets/img/Logo4.webp"
-import navIcon3 from "../assets/img/nav-icon3.svg"
+import Logo4 from "../assets/img/Logo4.png"
 
 export const NavBar = () => {
     
