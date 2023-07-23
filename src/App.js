@@ -13,7 +13,8 @@ const App = () => {
   useEffect(() => {
     fetch("/api")
     .then((res) => res.json())
-    .then((data) => {console.log(data)})
+    .then((data) => {console.log(data)});
+    document.title = "Ronak Patel";
   }, [])
   
   return (
